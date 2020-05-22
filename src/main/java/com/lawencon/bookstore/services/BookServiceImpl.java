@@ -213,4 +213,23 @@ public class BookServiceImpl implements BookService {
 
 	}
 
+	@Override
+	public void showMenuUtama() throws Exception {
+		System.out.println("\n=== Book Store ===");
+		System.out.println("1. List Book");
+		System.out.println("2. Keranjang Belanja");
+		System.out.println("3. Keluar Aplikasi");
+		System.out.print("Pilih menu : ");
+	}
+
+	@Override
+	public void showMenuKeranjang() throws Exception {
+		System.out.println("=== Menu ===");
+		System.out.println("1. Update Book");
+		System.out.println("2. Delete Book");
+		System.out.println("3. Delete All Book");
+		System.out.println("0. Kembali");
+		System.out.print("Pilih Menu : ");
+	}
+
 }

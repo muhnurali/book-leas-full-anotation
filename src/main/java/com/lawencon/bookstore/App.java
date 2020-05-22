@@ -21,19 +21,15 @@ public class App {
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		BookService bookService = context.getBean("bookService", BookService.class);
 
-		List<Book> listBook = new ArrayList<>();
-		listBook = bookService.setListBook();
+		List<Book> listBook = bookService.setListBook();
 		List<Book> listBuy = new ArrayList<>();
 
 		Scanner sc = new Scanner(System.in);
 		boolean kondisi = true;
 		int menu = 0, qty = 0;
+
 		do {
-			System.out.println("\n=== Book Store ===");
-			System.out.println("1. List Book");
-			System.out.println("2. Keranjang Belanja");
-			System.out.println("3. Keluar Aplikasi");
-			System.out.print("Pilih menu : ");
+			bookService.showMenuUtama();
 			try {
 				menu = sc.nextInt();
 				switch (menu) {
@@ -43,12 +39,7 @@ public class App {
 					break;
 				case 2:
 					while (bookService.showBelanja(listBuy)) {
-						System.out.println("=== Menu ===");
-						System.out.println("1. Update Book");
-						System.out.println("2. Delete Book");
-						System.out.println("3. Delete All Book");
-						System.out.println("0. Kembali");
-						System.out.print("Pilih Menu : ");
+						bookService.showMenuKeranjang();
 						menu = sc.nextInt();
 						switch (menu) {
 						case 1:

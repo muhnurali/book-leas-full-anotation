@@ -181,13 +181,13 @@ public class BookServiceImpl implements BookService {
 				} else {
 					update.setQty(menu);
 					kondisi = true;
+					this.updateBook(qty, listBuy, update);
 				}
 			} catch (Exception e) {
 				System.out.println("Hanya angka yang diperbolehkan");
 				kondisi = false;
 				sc.nextLine();
 			}
-			this.updateBook(qty, listBuy, update);
 		} catch (Exception e) {
 			System.out.println("Buku Tidak Ditemukan");
 		}
